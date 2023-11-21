@@ -41,3 +41,36 @@
 //        add(formLayout, grid);
 //    }
 //}
+
+//
+//private void exportToExcel(List<Employee> employees) {
+//        Workbook workbook = new XSSFWorkbook();
+//        Sheet sheet = workbook.createSheet("Employees");
+//        Row headerRow = sheet.createRow(0);
+//        Cell nameHeaderCell = headerRow.createCell(0);
+//        nameHeaderCell.setCellValue("Name");
+//        Cell roleHeaderCell = headerRow.createCell(1);
+//        roleHeaderCell.setCellValue("Role");
+//
+//        for (int i = 0; i < employees.size(); i++) {
+//        Employee employee = employees.get(i);
+//        Row row = sheet.createRow(i + 1);
+//        Cell nameCell = row.createCell(0);
+//        nameCell.setCellValue(employee.getName());
+//        Cell roleCell = row.createCell(1);
+//        roleCell.setCellValue(employee.getRole());
+//        }
+//
+//        try (FileOutputStream fileOut = new FileOutputStream("employees.xlsx")) {
+//        workbook.write(fileOut);
+//        } catch (IOException e) {
+//        e.printStackTrace();
+//        }
+//        }
+//
+//        Button exportButton = new Button("Export to Excel");
+//        exportButton.addClickListener(e -> {
+//        List<Employee> employees = employeeService.findAll();
+//        exportToExcel(employees);
+//        });
+//        formLayout.add(exportButton);
