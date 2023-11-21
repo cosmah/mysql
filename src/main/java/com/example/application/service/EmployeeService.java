@@ -19,4 +19,12 @@ public class EmployeeService {
     public List<Employee> findAll() {
         return repository.findAll();
     }
+
+    public Employee save(String name, String role) {
+        Employee employee = new Employee();
+        employee.setName(name);
+        employee.setRole(role);
+        return repository.save(employee);
+    }
+
 }

@@ -45,11 +45,23 @@ public class AboutView extends VerticalLayout {
             Employee employee = new Employee();
             employee.setName(nameField.getValue());
             employee.setRole(roleField.getValue());
-            employeeService.save(employee);
+            employeeService.save(employee.getName(), employee.getRole()); // pass the name and role to the save method
             employees.add(employee);
             grid.setItems(employees);
             nameField.clear();
             roleField.clear();
         });
+
+//        addButton.addClickListener(e -> {
+//            Employee employee = employeeService.save(nameField.getValue(), roleField.getValue());
+//            employees = employeeService.findAll();
+//            grid.setItems(employees);
+//            nameField.clear();
+//            roleField.clear();
+//        });
+
+        add(formLayout, grid);
+
+
     }
 }
